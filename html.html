@@ -1,77 +1,129 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .icon-container {
+            display: flex;
+            gap: 20px;
+            font-size: 24px;
+        }
+
+        .icon {
+            color: #008AAA;
+            cursor: pointer;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #008AAA;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .content {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #skills {
+            display: none; /* Hide skills by default */
+        }
+    </style>
+    <title>My Portfolio</title>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <h1>Your Name</h1>
-            <p>Web Developer</p>
+        <h1 id="welcomeMessage">Renad shiyab profile</h1>
+        <div class="icon-container">
+            <div onclick="showContent('home')">Home <i class="icon fas fa-home"></i></div>
+            <div onclick="showContent('about')">About Me <i class="icon fas fa-user"></i></div>
+            <div onclick="showContent('contact')">Contact Me <i class="icon fas fa-envelope"></i></div>
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="button-container">
+        <button onclick="showContent('hireMe')">Hire Me</button>
+        <button onclick="alert('See My Projects button clicked')">See My Projects</button>
+    </div>
 
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Write a brief introduction about yourself here.</p>
-        </div>
-    </section>
+    <div id="home" class="content">
+        <!-- Content for Home -->
+        <p> welcome to my site</p>
+    </div>
 
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <!-- Add more skills as needed -->
-            </ul>
-        </div>
-    </section>
+    <div id="about" class="content">
+        <!-- Content for About Me -->
+        <p>My name is Renad Shiyab, my major is computer information systems, and I am skilled in HTML, PHP, and Python.</p>
+    </div>
 
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project">
-                <img src="project1.jpg" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>Description of Project 1.</p>
-            </div>
-            <!-- Add more projects as needed -->
-        </div>
-    </section>
+    <div id="contact" class="content">
+        <!-- Content for Contact -->
+        <h2>Contact</h2>
+        <p>Email: renad.shiyab@gmail.com</p>
+        <p>Phone: +962 0797452490</p>
+    </div>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>Email: your.email@example.com</p>
-            <p>Phone: (123) 456-7890</p>
-        </div>
-    </section>
+    <div id="hireMe" class="content">
+        <h2>skills</h2>
+        <li>html</li>
+        <li>python</li>
+       <li>php</li>
+          
+           
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Your Name. All rights reserved.</p>
-        </div>
-    </footer>
+    <script>
+        function showContent(content) {
+            // Hide all content sections
+            document.querySelectorAll('.content').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Show the selected content section
+            document.getElementById(content).style.display = 'block';
+
+            // Update welcome message for Home icon
+            if (content === 'home') {
+                document.getElementById('welcomeMessage').innerText = 'Welcome to My Portfolio';
+            } else {
+                document.getElementById('welcomeMessage').innerText = '';
+            }
+        }
+    </script>
 
 </body>
 </html>
